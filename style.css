@@ -1,3 +1,4 @@
+/* General Body Styling */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body {
   font-family: "Acme";
 }
 
+/* Container Styling */
 .container {
   max-width: 1000px;
   margin: 100px auto;
@@ -14,11 +16,12 @@ body {
   justify-content: space-around;
 }
 
+/* Card Styling */
 .unto {
   position: relative;
   margin: 20px 0;
   width: 300px;
-  height: 400px;
+  height: 533px; /* 9:16 aspect ratio */
   background: linear-gradient(#ffffff, #41aed0);
   transform-style: preserve-3d;
   transform: perspective(2000px);
@@ -31,6 +34,7 @@ body {
   box-shadow: 5px 5px 20px rgb(235, 151, 128);
 }
 
+/* Video Container Styling */
 .unto .img-container {
   position: relative;
   width: 100%;
@@ -42,12 +46,12 @@ body {
   transition: 1s;
 }
 
-.unto .img-container img {
+.unto .img-container video {
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -55,6 +59,7 @@ body {
   transform: rotateY(-135deg);
 }
 
+/* Card Details Styling */
 .unto .unto-details {
   position: absolute;
   left: 0;
@@ -77,23 +82,15 @@ body {
 }
 
 @keyframes untold {
-  0% {
+  0%, 100% {
     background: linear-gradient(to right, #a14444, #ff0c08, #710071, #eedd44);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: untold 0.1s infinite ease-in-out;
   }
   50% {
     background: linear-gradient(to right, #2fff00, #25235d, #ec4705, #a744ee);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: untold 3s infinite ease-in-out;
-  }
-  100% {
-    background: linear-gradient(to right, #f32121, #ff0890, #cdb903, #d122f8);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    animation: untold 1s infinite ease-in-out;
   }
 }
 
@@ -106,6 +103,7 @@ body {
   font-weight: 600;
 }
 
+/* Cliparts Container */
 .cliparts-container {
   position: absolute;
   top: 20px;
@@ -115,6 +113,7 @@ body {
   color: #fff;
 }
 
+/* Clipart Styling */
 .clipart {
   display: none;
   width: 100px;
@@ -136,6 +135,8 @@ body {
     opacity: 1;
   }
 }
+
+/* Button Styling */
 button {
   background: none;
   border: none;
@@ -153,15 +154,18 @@ button img {
 button img:hover {
   transform: scale(1.1);
 }
-h1
-{
+
+/* Heading Styling */
+h1 {
   text-shadow: 2px;
   text-decoration-color: #25235d;
   color: #72dcea; /* Change this color to your preferred color */
-    font-size: 2em;
-    text-align: center;
-    margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
 }
+
+/* Rocket Image Styling */
 #rocket {
   position: absolute;
   width: 50px;
