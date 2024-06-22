@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="unto" id="hover-card">
+            <div class="img-container">
+                <video src="S.mp4";
+                " alt="" />
+            </div>
+            <div class="unto-details">
+                <h2 align="center">Hey Siya</h2>
+                <p>Could this day be any more special?
+                    Your joyful spirit and love for the sky,
+                    Your presence brings warmth and wisdom,
+                    In every situation, you know why.<br>
+                    
+                    You're my go-to advisor, always near,
+                    With the best advice and a heart so dear.
+                    Much like Anna’s motherly support, 
+                    You make everything so clear.<br>
+                    
+                    Here’s to a birthday as amazing as you,
+                    Filled with joy, sunsets, and skies so blue.
+                    Thank you for being the beauty and inspiration,
+                    Of all my poetic creation.<br>
+                    
+                    Stay as wonderful and spirited as ever, Siya,
+                    Could you *be* any more loved by ya!
+                </p>
+                <br /><br />
+               <h5 align="right">---Vishal (Taabir)</h5> 
+            </div>
+        </div>
+        <div class="cliparts-container">
+            <img src="ggj.gif" alt="Star" class="clipart" id="clipart-1">
+        </div>
+    </div>
+    <audio id="hover-audio" src="spotifydown.com - Little Bit Better.mp3"></audio>
+    <audio id="page-audio" src="Y2meta.app - Send This to Your Friend on Their Birthday (320 kbps).mp3" autoplay></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageAudio = document.getElementById('page-audio');
+            const playPromise = pageAudio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Autoplay started');
+                }).catch(error => {
+                    console.log('Autoplay prevented:', error);
+                    document.body.addEventListener('click', playPageAudio);
+                });
+            }
+        });
+
+        function playPageAudio() {
+            const pageAudio = document.getElementById('page-audio');
+            pageAudio.play();
+            document.body.removeEventListener('click', playPageAudio);
+        }
+
+        const hoverCard = document.getElementById('hover-card');
+        const hoverAudio = document.getElementById('hover-audio');
+
+        hoverCard.addEventListener('mouseover', () => {
+            hoverAudio.play();
+            document.getElementById('page-audio').pause();
+            showCliparts();
+            launchConfetti();
+        });
+
+        hoverCard.addEventListener('mouseout', () => {
+            hoverAudio.pause();
+            hoverAudio.currentTime = 0;
+            hideCliparts();
+            document.getElementById('page-audio').play();
+        });
+
+        function showCliparts() {
+            const cliparts = document.querySelectorAll('.clipart');
+            cliparts.forEach((clipart, index) => {
+                setTimeout(() => {
+                    clipart.classList.add('visible');
+                }, index * 2000); // Adjust timing as needed
+            });
+        }
+
+        function hideCliparts() {
+            const cliparts = document.querySelectorAll('.clipart');
+            cliparts.forEach(clipart => {
+                clipart.classList.remove('visible');
+            });
+        }
+
+        function launchConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
+</body>
+</html>

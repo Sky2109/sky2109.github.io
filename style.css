@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('sky-nature-atmosphere-astronomical-object-night-star-893832-wallhere.com.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Acme";
+}
+
+.container {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.unto {
+  position: relative;
+  margin: 20px 0;
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(#ffffff, #41aed0);
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 1s;
+}
+
+.unto:hover {
+  z-index: 1111;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: 5px 5px 20px rgb(235, 151, 128);
+}
+
+.unto .img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+}
+
+.unto .img-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.unto:hover .img-container {
+  transform: rotateY(-135deg);
+}
+
+.unto .unto-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+}
+
+.unto .unto-details h2 {
+  margin: 0;
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  font-family: cursive;
+  font-size: 1.7em;
+  background: linear-gradient(to right, #f32170, #ff0c08, #710071, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: untold 3s infinite ease-in-out;
+}
+
+@keyframes untold {
+  0% {
+    background: linear-gradient(to right, #a14444, #ff0c08, #710071, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: untold 0.1s infinite ease-in-out;
+  }
+  50% {
+    background: linear-gradient(to right, #2fff00, #25235d, #ec4705, #a744ee);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: untold 3s infinite ease-in-out;
+  }
+  100% {
+    background: linear-gradient(to right, #f32121, #ff0890, #cdb903, #d122f8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: untold 1s infinite ease-in-out;
+  }
+}
+
+.unto .unto-details p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  font-size: 0.6em;
+  font-weight: 600;
+}
+
+.cliparts-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.clipart {
+  display: none;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  animation: fade-in-out 2s linear;
+}
+
+.clipart.visible {
+  display: block;
+  animation: fade-in-out 2s linear;
+}
+
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+button img {
+  width: 150px; /* Adjust the size as needed */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+button img:hover {
+  transform: scale(1.1);
+}
+h1
+{
+  text-shadow: 2px;
+  text-decoration-color: #25235d;
+  color: #72dcea; /* Change this color to your preferred color */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+#rocket {
+  position: absolute;
+  width: 50px;
+  transition: top 0.1s, left 0.1s;
+}
