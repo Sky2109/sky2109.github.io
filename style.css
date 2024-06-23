@@ -103,8 +103,7 @@ body {
   font-weight: 600;
 }
 
-/* Cliparts Container */
-.cliparts-container {
+/* Cliparts Container */.cliparts-container {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -113,7 +112,7 @@ body {
   color: #fff;
 }
 
-/* Clipart Styling */
+
 .clipart {
   display: none;
   width: 100px;
