@@ -12,14 +12,12 @@ body {
   max-width: 1000px;
   margin: 100px auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 /* Card Styling */
-.unto {
+.card {
   position: relative;
-  margin: 20px 0;
   width: 300px;
   height: 533px; /* 9:16 aspect ratio */
   background: linear-gradient(#ffffff, #41aed0);
@@ -28,48 +26,79 @@ body {
   transition: 1s;
 }
 
-.unto:hover {
+.card:hover {
   z-index: 1111;
-  transform: perspective(2000px) rotate(-10deg);
+  transform: perspective(2000px) rotateY(0deg);
   box-shadow: 5px 5px 20px rgb(235, 151, 128);
 }
 
-/* Video Container Styling */
-.unto .img-container {
-  position: relative;
+/* Left Flap Styling */
+.flap.left-flap {
+  position: absolute;
   width: 100%;
   height: 100%;
-  border: 1px solid #000;
-  box-sizing: border-box;
+  top: 0;
+  left: 0;
   transform-origin: left;
-  z-index: 1;
   transition: 1s;
+  transform: rotateY(0deg);
+  background-color: white;
+  z-index: 2;
 }
 
-.unto .img-container video {
-  position: absolute;
-  left: 0;
-  top: 0;
+.flap.left-flap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.unto:hover .img-container {
-  transform: rotateY(-135deg);
+.card:hover .flap.left-flap {
+  transform: rotateY(-180deg);
+}
+
+/* Right Flap Styling */
+.flap.right-flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: right;
+  transition: 1s;
+  transform: rotateY(0deg);
+  background-color: white;
+  z-index: 1;
+}
+
+.flap.right-flap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover .flap.right-flap {
+  transform: rotateY(180deg);
 }
 
 /* Card Details Styling */
-.unto .unto-details {
+.card-details {
   position: absolute;
   left: 0;
   top: 0;
   box-sizing: border-box;
   padding: 20px;
   color: #000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  backface-visibility: hidden;
 }
 
-.unto .unto-details h2 {
+.card-details h2 {
   margin: 0;
   padding: 0.5em 0;
   text-transform: uppercase;
@@ -94,79 +123,30 @@ body {
   }
 }
 
-.unto .unto-details p {
+.card-details p {
   text-align: center;
   margin: 0;
   padding: 0;
   line-height: 20px;
-  font-size: 1em;
+  font-size: 0.6em;
   font-weight: 600;
 }
 
-/* Cliparts Container */.cliparts-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-}
-
-
-.clipart {
-  display: none;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  animation: fade-in-out 2s linear;
-}
-
-.clipart.visible {
-  display: block;
-  animation: fade-in-out 2s linear;
-}
-
-@keyframes fade-in-out {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Button Styling */
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-}
-
-button img {
-  width: 150px; /* Adjust the size as needed */
-  height: auto;
-  transition: transform 0.3s;
-}
-
-button img:hover {
-  transform: scale(1.1);
-}
-
-/* Heading Styling */
-h1 {
-  text-shadow: 2px;
-  text-decoration-color: #25235d;
-  color: #72dcea; /* Change this color to your preferred color */
-  font-size: 2em;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Rocket Image Styling */
-#rocket {
+/* Pigeon Styling */
+.pigeon {
   position: absolute;
   width: 50px;
-  transition: top 0.1s, left 0.1s;
+  animation: fly 5s linear infinite;
+  top: 100vh; /* Start below the viewport */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-100vh);
+  }
 }

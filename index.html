@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday</title>
+    <title>Breakup Greeting</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
-        <div class="unto" id="hover-card">
-            <div class="img-container">
-                <video src="S.mp4" alt="" autoplay muted loop></video>
+        <div class="card" id="hover-card">
+            <div class="flap left-flap">
+                <img src="your-image.jpg" alt="Cover Image">
             </div>
-            <div class="unto-details">
-                <h2 align="center">Hey Siya you know what you are sooooo perfect ki....</h2>
+            <div class="flap right-flap">
+                <img src="another-image.jpg" alt="Second Flap Image">
+            </div>
+            <div class="card-details">
+                <h2 align="center"></h2>
                 <p>
                     Thinking of you... keeps me awake...<br>
                     Dreaming of you keeps.. me asleep...<br>
                     being with you keeps.... me alive....<br>
                 </p>
                 <br /><br />
-               <h5 align="right">--- your sky</h5> 
+                <h5 align="right">--- your sky</h5> 
             </div>
         </div>
     </div>
     <audio id="hover-audio" src="perfect.mp3"></audio>
     <audio id="page-audio" src="SATRANGA.mp3" autoplay></audio>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const pageAudio = document.getElementById('page-audio');
@@ -53,39 +55,29 @@
         hoverCard.addEventListener('mouseover', () => {
             hoverAudio.play();
             document.getElementById('page-audio').pause();
-            showCliparts();
-            launchConfetti();
+            launchPigeons();
         });
 
         hoverCard.addEventListener('mouseout', () => {
             hoverAudio.pause();
             hoverAudio.currentTime = 0;
-            hideCliparts();
             document.getElementById('page-audio').play();
         });
 
-        function showCliparts() {
-            const cliparts = document.querySelectorAll('.clipart');
-            cliparts.forEach((clipart, index) => {
-                setTimeout(() => {
-                    clipart.classList.add('visible');
-                }, index * 2000); // Adjust timing as needed
-            });
+        function launchPigeons() {
+            for (let i = 0; i < 10; i++) {
+                createPigeon();
+            }
         }
 
-        function hideCliparts() {
-            const cliparts = document.querySelectorAll('.clipart');
-            cliparts.forEach(clipart => {
-                clipart.classList.remove('visible');
-            });
-        }
-
-        function launchConfetti() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
+        function createPigeon() {
+            const pigeon = document.createElement('img');
+            pigeon.src = 'pigeon.png'; // Replace with your pigeon image URL
+            pigeon.classList.add('pigeon');
+            document.body.appendChild(pigeon);
+            setTimeout(() => {
+                pigeon.remove();
+            }, 5000); // Pigeons will fly for 5 seconds
         }
     </script>
 </body>
