@@ -20,7 +20,7 @@ body {
   position: relative;
   width: 300px;
   height: 533px; /* 9:16 aspect ratio */
-  background: linear-gradient(#ffffff, #41aed0);
+  background: ;
   transform-style: preserve-3d;
   transform: perspective(2000px);
   transition: 1s;
@@ -102,14 +102,14 @@ body {
   transform: rotateY(-179deg);
 }
 
-/* Card Details Styling */
+/* Card Details Styling */ 
 .card-details {
   position: absolute;
   left: 0;
   top: 0;
   box-sizing: border-box;
   padding: 20px;
-  color: #000;
+  color:#ffffff;
   width: 100%;
   height: 100%;
   display: flex;
@@ -119,24 +119,16 @@ body {
   z-index: 0;
   backface-visibility: hidden;
 }
-
+.card-details h5 {
+  color: #ff0c08;
+  }
 .card-details img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card-details h2 {
-  margin: 0;
-  padding: 0.5em 0;
-  text-transform: uppercase;
-  font-family: cursive;
-  font-size: 1.7em;
-  background: linear-gradient(to right, #f32170, #ff0c08, #710071, #eedd44);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation: untold 3s infinite ease-in-out;
-}
+
 
 @keyframes untold {
   0%, 100% {
@@ -156,8 +148,10 @@ body {
   margin: 0;
   padding: 0;
   line-height: 20px;
-  font-size: 0.6em;
-  font-weight: 600;
+  font-size: 1em;
+  font-weight: 700;
+  text-shadow: #25235d;
+
 }
 
 /* Pigeon Styling */
