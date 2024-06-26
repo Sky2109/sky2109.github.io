@@ -79,6 +79,28 @@ body {
 .card:hover .flap.right-flap {
   transform: rotateY(180deg);
 }
+.flap.right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: 1s;
+  transform: rotateY(0deg);
+  background-color: white;
+  z-index: 1;
+}
+
+.flap.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover .flap.right {
+  transform: rotateY(-179deg);
+}
 
 /* Card Details Styling */
 .card-details {
@@ -96,6 +118,12 @@ body {
   align-items: center;
   z-index: 0;
   backface-visibility: hidden;
+}
+
+.card-details img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-details h2 {
@@ -137,16 +165,16 @@ body {
   position: absolute;
   width: 50px;
   animation: fly 5s linear infinite;
-  top: 100vh; /* Start below the viewport */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
 }
 
 @keyframes fly {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translate(-50%, 0) translateY(0);
   }
   100% {
-    transform: translateX(-50%) translateY(-100vh);
+    transform: translate(-50%, -100vh) translateY(0);
   }
 }

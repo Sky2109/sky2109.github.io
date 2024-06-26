@@ -10,10 +10,13 @@
     <div class="container">
         <div class="card" id="hover-card">
             <div class="flap left-flap">
-                <img src="your-image.jpg" alt="Cover Image">
+                <img src="1255.jpg" alt="Front Page Image">
             </div>
             <div class="flap right-flap">
-                <img src="another-image.jpg" alt="Second Flap Image">
+                <img src="55.jpg" alt="Inner Left Page Image">
+            </div>
+            <div class="flap right">
+                <img src="12.jpg" alt="Inner Left Page Image">
             </div>
             <div class="card-details">
                 <h2 align="center"></h2>
@@ -27,8 +30,8 @@
             </div>
         </div>
     </div>
-    <audio id="hover-audio" src="perfect.mp3"></audio>
-    <audio id="page-audio" src="SATRANGA.mp3" autoplay></audio>
+    <audio id="hover-audio" src="mansoob.mp3"></audio>
+    <audio id="page-audio" src="husn.mp3" autoplay></audio>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const pageAudio = document.getElementById('page-audio');
@@ -70,15 +73,7 @@
             }
         }
 
-        function createPigeon() {
-            const pigeon = document.createElement('img');
-            pigeon.src = 'pigeon.png'; // Replace with your pigeon image URL
-            pigeon.classList.add('pigeon');
-            document.body.appendChild(pigeon);
-            setTimeout(() => {
-                pigeon.remove();
-            }, 5000); // Pigeons will fly for 5 seconds
-        }
+        
     </script>
 </body>
 </html>
